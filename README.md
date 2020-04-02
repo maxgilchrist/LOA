@@ -1,5 +1,5 @@
 # LOA
-Currently in early stages
+In development
 ## Background
 [Lines of Action](https://en.wikipedia.org/wiki/Lines_of_Action)
 ## Set-Up/Install
