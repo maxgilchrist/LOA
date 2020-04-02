@@ -17,8 +17,8 @@ TODO
 ## Version 
 0.0 - April 1st 2020
 ## Authors
-* **Max Gilchrist** - *Initial work* - [maxgilchrist](https://github.com/maxgilchrist)
+* **Max Gilchrist** - *TBA* - [maxgilchrist](https://github.com/maxgilchrist)
 ## License
 TODO
 ## Acknowledgments 
-TODO
+* **Dan Gracia** - *Hashing and general apporach* - [Hashing Source File](http://gamescrafters.berkeley.edu/software/rearranger.scm)
