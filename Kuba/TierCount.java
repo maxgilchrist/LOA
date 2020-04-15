@@ -38,7 +38,7 @@ public class TierCount {
 				
 				}
 				r += rw;
-				System.out.printf("\n               R=%.0f W=%.0f Count=%.0f\n", i, j, rw);
+				System.out.printf("\n          R=%.0f W=%.0f Count=%.0f\n", i, j, rw);
 				//pw.printf("\n               R=%.0f W=%.0f Count=%.0f\n", i, j, rw);
 			}
 			total += r;
