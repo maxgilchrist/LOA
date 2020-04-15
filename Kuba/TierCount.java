@@ -15,10 +15,10 @@ public class TierCount {
 	}
 	public static void main(String[] args) {
 		System.out.printf("\n\nKuba Tiered Count\n\n");
-		File file = new File(args[0]+"_"+args[1]+"_"+args[2]+"_"+args[3]+".txt");
-		FileWriter fileWriter = new FileWriter(file);
-		PrintWriter pw = new PrintWriter(fileWriter);
-		pw.printf("\n\nKuba Tiered Count\n\n");
+		//File file = new File(args[0]+"_"+args[1]+"_"+args[2]+"_"+args[3]+".txt");
+		//FileWriter fileWriter = new FileWriter(file);
+		//PrintWriter pw = new PrintWriter(fileWriter);
+		//pw.printf("\n\nKuba Tiered Count\n\n");
 		double boardsize = Double.parseDouble(args[0]);
 		double red = Double.parseDouble(args[1]);
 		double white = Double.parseDouble(args[2]);
@@ -33,20 +33,20 @@ public class TierCount {
 					rwb = 0;
 					rwb = CountSlice(boardsize,i,j,k);
 					System.out.printf("\n               R=%.0f W=%.0f  B=%.0f Count=%.0f\n",i,j,k,rwb);			
-					pw.printf("\n               R=%.0f W=%.0f  B=%.0f Count=%.0f\n",i,j,k,rwb);			
+					//pw.printf("\n               R=%.0f W=%.0f  B=%.0f Count=%.0f\n",i,j,k,rwb);			
 					rw += rwb;
 				
 				}
 				r += rw;
 				System.out.printf("\n               R=%.0f W=%.0f Count=%.0f\n", i, j, rw);
-				pw.printf("\n               R=%.0f W=%.0f Count=%.0f\n", i, j, rw);
+				//pw.printf("\n               R=%.0f W=%.0f Count=%.0f\n", i, j, rw);
 			}
 			total += r;
 			System.out.printf("\n     R=%.0f Count=%.0f\n", i, r);
-			pw.printf("\n     R=%.0f Count=%.0f\n", i, r);
+			//pw.printf("\n     R=%.0f Count=%.0f\n", i, r);
 		}
 		System.out.printf("\nBoardSize=%.0f Red=%.0f White=%.0f Black=%.0f TotalPositions=%.0f\n\n",boardsize,red,white,black,total);
-		pw.printf("\nBoardSize=%.0f Red=%.0f White=%.0f Black=%.0f TotalPositions=%.0f\n\n",boardsize,red,white,black,total);
+		//pw.printf("\nBoardSize=%.0f Red=%.0f White=%.0f Black=%.0f TotalPositions=%.0f\n\n",boardsize,red,white,black,total);
 
 	}
 
