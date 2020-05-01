@@ -36,7 +36,7 @@ void Naive4x4Test(int* position) {
 	rotate4(position);
 	flip(position);
 }
-	
+/*	
 static void printMatrix(int* position) {
 	for (int i = 0; i < 4; i++) {
 		printf("%2d %2d %2d %2d\n", *(position+(4*i)), *(position+(4*i)+1), *(position+(4*i)+2), *(position+(4*i)+3));
@@ -48,7 +48,7 @@ static int* createTest() {
 		*(test+i) = i;
 	}
 	return test;
-}/*
+}
 int main() {
 	int* test = createTest();
 	printMatrix(test);

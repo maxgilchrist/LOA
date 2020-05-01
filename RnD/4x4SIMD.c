@@ -79,6 +79,7 @@ void SIMD4x4Test(int* position) {
 	rotate4(position);
 	flip(position);
 }
+/*
 static void allTogether(int* position) {
 	rotate4(position);
 	flip(position);
@@ -99,7 +100,7 @@ static int* makeTest() {
 	}
 	return test;
 }
-/*
+
 int main() {
 	int* test = makeTest();
 	allTogether(test);
