@@ -12,7 +12,6 @@ class IndexTracker:
 		self.X = X
 		rows, cols, self.slices = X.shape
 		self.ind = self.slices//2
-		print(self.X[:,:,self.ind])		
 		self.im = ax.imshow(self.X[:,:,self.ind],cmap=self.cmap)
 		self.update()
 	def onPress(self,event):
@@ -61,11 +60,10 @@ def main():
 	boardsizes = [i for i in range(65) if not isPrime(i)]
 	data = np.array(build(boardsizes,limit))
 	
-
 	fig, ax = plt.subplots(1,1)	
-	ax.set_xlim(2,32)
-	ax.set_ylim(2,32)
-	ax.transData.translate(2,2)
+	ax.set_xlim(0,32)
+	ax.set_ylim(0,32)
+	#ax.transData.translate(2,2)
 	colors = [(0,1,0),(1,0,0),(0,0,0)]
 	cmapname = 'my_map'
 	cm = LinearSegmentedColormap.from_list(cmapname,colors,N=3)
