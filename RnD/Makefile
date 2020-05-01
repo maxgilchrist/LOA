@@ -4,7 +4,7 @@ TARGETS = PerformanceTest
 OBJECTS = test.o 4x4Naive.o 4x4Check.o 8x8Naive.o 8x8Check.o
 PerformanceTest : $(OBJECTS)
 	@$(CC) -w -o $(TARGETS) $(OBJECTS) 
-	@echo "Build Successful"
+	@echo $(TARGETS) "built successfully"
 	@rm -f $(OBJECTS)
 	@echo "Cleaned up"
 test.o : test.c 
@@ -22,9 +22,12 @@ test.o : test.c
 8x8Check.o : 8x8Check.c 
 	@$(CC) -w $(CCFLAGS) -c 8x8Check.c
 	@echo "Compiled 8x8Check.c"
-.PHONY : clean verbose
-verbose:
-	$(CC) -o $(TARGETS) $(OBJECTS)
+.PHONY : clean run
+run :
+	@make
+	@echo "Running Performance Test"
+	@./$(TARGETS)
+	@rm -f $(TARGETS)
 clean :
 	@rm -f $(TARGETS) $(OBJECTS)
 	@echo "Manual clean successful"
