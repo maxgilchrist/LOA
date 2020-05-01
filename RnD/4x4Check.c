@@ -82,7 +82,7 @@ void allTogether(int* position) {
 }
 void printMatrix(int* position) {
 	for (int i = 0; i < 4; i++) {
-		printf("%i %i %i %i\n",*(position + (4*i)),*(position+(4*i)+1),*(position+(4*i)+2),*(position+(4*i)+3));
+		printf("%2i %2i %2i %2i\n",*(position + (4*i)),*(position+(4*i)+1),*(position+(4*i)+2),*(position+(4*i)+3));
 	}
 	printf("\n");
 }
