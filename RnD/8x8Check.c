@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <x86intrin.h>
-void flip(int* position){
+static void flip(int* position){
 	__m256i r0,r1,r2,r3,r4,r5,r6,r7;
 
 	r0 = _mm256_load_si256(&position[0*8]);
@@ -22,7 +22,7 @@ void flip(int* position){
 	_mm256_store_si256(&position[6*8],r1);
 	_mm256_store_si256(&position[7*8],r0);
 }
-void transpose(int* position){
+static void transpose(int* position){
 	__m256 r0,r1,r2,r3,r4,r5,r6,r7;
 	__m256 t0,t1,t2,t3,t4,t5,t6,t7;
 	
@@ -74,39 +74,46 @@ void transpose(int* position){
 	_mm256_store_si256(&position[6*8],_mm256_castps_si256(r6));
 	_mm256_store_si256(&position[7*8],_mm256_castps_si256(r7));
 }
-void rotate(int* position) {
+static void rotate(int* position) {
 	flip(position);
 	transpose(position);
 }
-void rotate4(int* position) {
-	printMatrix(position);
+static void rotate4(int* position) {
+	//printMatrix(position);
 
 	rotate(position);
-	printMatrix(position);
+	//printMatrix(position);
 
 	rotate(position);
-	printMatrix(position);
+	//printMatrix(position);
 
 	rotate(position);
-	printMatrix(position);
+	//printMatrix(position);
 
 	rotate(position);
-	printMatrix(position);
+	//printMatrix(position);
 }
-void allTogether(int* position) {
+void SIMD8x8Test(int* position) {
+	rotate4(position);
+	flip(position);
+	rotate4(position);
+	flip(position);
+}
+/*
+static void allTogether(int* position) {
 	rotate4(position);
 	flip(position);
 	rotate4(position);
 	flip(position);
 	printMatrix(position);
 }
-void printMatrix(int* position) {
+static void printMatrix(int* position) {
 	for (int i = 0; i < 8; i++) {
 		printf("%2d %2d %2d %2d %2d %2d %2d %2d\n",*(position+(8*i)+0),*(position+(8*i)+1),*(position+(8*i)+2),*(position+(8*i)+3),*(position+(8*i)+4),*(position+(8*i)+5),*(position+(8*i)+6),*(position+(8*i)+7));
 	}
 	printf("\n");
 }
-int* createTest() {
+static int* createTest() {
 	int* test = malloc(sizeof(int) * 64);
 	for (int i = 0; i < 64; i++){
 		*(test+i) = i;
@@ -118,4 +125,4 @@ int main() {
 	allTogether(test);
 	free(test);
 	return 0;
-}
+}*/
